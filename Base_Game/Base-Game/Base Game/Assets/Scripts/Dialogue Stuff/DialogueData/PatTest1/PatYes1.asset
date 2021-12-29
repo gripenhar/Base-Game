@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09915d7d2837d546a3bb6c755309603, type: 3}
+  m_Name: PatYes1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Really?!
+  - What's your favorite kind of flower?
+  responses:
+  - responseText: Roses
+    dialogueObject: {fileID: 11400000, guid: 5ca280ad163b5d048865b3ea4a45f9c5, type: 2}
+  - responseText: Daisys
+    dialogueObject: {fileID: 11400000, guid: 18e86777d88cd7347a03e15bd13efedb, type: 2}
+  - responseText: Poppies
+    dialogueObject: {fileID: 11400000, guid: 2d520909a66d40141aaaff62fb925d5c, type: 2}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: oceanWave01
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: 32bc3e781e86d274fbe7063ba0a0c9f6, type: 3}
+  - {fileID: 21300000, guid: 26307c0bc2ab18741ba576e6b5aeada8, type: 3}
+  - {fileID: 21300000, guid: 737c9dead8075b64691a576bff5cd8eb, type: 3}
+  - {fileID: 21300000, guid: 26977d77755beb5439b361479b9eefe7, type: 3}
+  - {fileID: 21300000, guid: f7e668fc31fbc2f4dac7d9cd99a072ff, type: 3}
+  - {fileID: 21300000, guid: 4ec8e38ff6ed7e94fb40cde25d854402, type: 3}
+  - {fileID: 21300000, guid: 3cf959e290a3f1c4fb4e9c2b932e0b3d, type: 3}
+  m_MinSpeed: 10
+  m_MaxSpeed: 10
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0

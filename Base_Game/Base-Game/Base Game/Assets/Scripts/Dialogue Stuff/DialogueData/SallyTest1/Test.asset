@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09915d7d2837d546a3bb6c755309603, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  dialogue:
+  - 'Oh hi, I''m Sally!
+
+    Are you new here?'
+  - Please let me know if you are hurt, I can help!
+  responses:
+  - responseText: I'm good, thanks.
+    dialogueObject: {fileID: 11400000, guid: 0f18f0652af981948bb3648e0071c0a7, type: 2}
+  - responseText: Can I have a potion?
+    dialogueObject: {fileID: 11400000, guid: d4852d7cd34c33246ae5bf3e07a758e2, type: 2}
+  - responseText: Please heal me!
+    dialogueObject: {fileID: 11400000, guid: d5b0a795289f3b345bf13289ddef6efb, type: 2}

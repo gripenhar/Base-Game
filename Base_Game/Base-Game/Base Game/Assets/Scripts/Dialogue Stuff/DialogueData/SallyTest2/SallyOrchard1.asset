@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09915d7d2837d546a3bb6c755309603, type: 3}
+  m_Name: SallyOrchard1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Hi, I'm Sally! Welcome to the orchard!
+  responses:
+  - responseText: What kind of fruit grows here?
+    dialogueObject: {fileID: 11400000, guid: 662eba3bea5956d4eaf45f60dcfd8d37, type: 2}
+  - responseText: Are you a nudist?
+    dialogueObject: {fileID: 11400000, guid: d09eb293f97e15c45bd66246eba2fc28, type: 2}
+  - responseText: Can I touch your fruits?
+    dialogueObject: {fileID: 11400000, guid: 696a4f6d839779c459b684b61bb5028b, type: 2}

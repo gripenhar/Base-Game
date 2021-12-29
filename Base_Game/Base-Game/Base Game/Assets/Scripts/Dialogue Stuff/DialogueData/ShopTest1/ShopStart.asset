@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09915d7d2837d546a3bb6c755309603, type: 3}
+  m_Name: ShopStart
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Hey welcome!
+  - What'll it be?
+  responses:
+  - responseText: Red Potion
+    dialogueObject: {fileID: 11400000, guid: 636cb09ac7c27964dbdb8daa33ce738b, type: 2}
+  - responseText: Green Potion
+    dialogueObject: {fileID: 11400000, guid: e51b05e64e9d991448795ccf87bd61fe, type: 2}

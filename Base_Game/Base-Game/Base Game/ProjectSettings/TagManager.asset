@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - breakable
+  - enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Enemy
+  - Enemy_Projectile
+  - Player_Projectile
+  - Player
+  - Minimap
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: breakable
+    uniqueID: 1892148653
+    locked: 0
+  - name: Signs
+    uniqueID: 2915317889
+    locked: 0
+  - name: Player
+    uniqueID: 1402387945
+    locked: 0
+  - name: onPlayer
+    uniqueID: 1952851505
+    locked: 0
