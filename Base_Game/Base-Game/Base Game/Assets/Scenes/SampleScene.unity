@@ -22948,6 +22948,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4544841164107828537, guid: 7a9b8ab2ae33d9b4d8e7bb923f5c04b9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4544841165093484060, guid: 7a9b8ab2ae33d9b4d8e7bb923f5c04b9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -23503,6 +23508,16 @@ PrefabInstance:
       propertyPath: dialogueBox
       value: 
       objectReference: {fileID: 1235022510}
+    - target: {fileID: 6536964058227166775, guid: 90988af1d66905f49ba1a9f31637dfff,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1402387945
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536964058227166775, guid: 90988af1d66905f49ba1a9f31637dfff,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90988af1d66905f49ba1a9f31637dfff, type: 3}
 --- !u!60 &7709506782978233756
