@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: PatNo1
   m_EditorClassIdentifier: 
   dialogue:
-  - I thought everyone liked flowers...
-  - What's wrong with you!?
+  - dialogueText: What?!
+    portrait:
+      portraitSprite: {fileID: 0}
+  - dialogueText: I thought everyone liked flowers...
+    portrait:
+      portraitSprite: {fileID: 0}
   responses: []

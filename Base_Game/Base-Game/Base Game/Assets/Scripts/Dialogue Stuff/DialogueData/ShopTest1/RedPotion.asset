@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: RedPotion
   m_EditorClassIdentifier: 
   dialogue:
-  - Nice choice, that'll be $10.
+  - dialogueText: That'll be $10! Enjoy!
+    portrait:
+      portraitSprite: {fileID: 0}
   responses: []

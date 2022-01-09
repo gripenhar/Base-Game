@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: done1
   m_EditorClassIdentifier: 
   dialogue:
-  - Changed your mind eh?
+  - dialogueText: Did you still need something?
+    portrait:
+      portraitSprite: {fileID: 21300000, guid: ae32c8961899edd4a82856f90b956b4b, type: 3}
   responses:
-  - responseText: Nevermind...
+  - responseText: No, I'm good.
     dialogueObject: {fileID: 11400000, guid: 0f18f0652af981948bb3648e0071c0a7, type: 2}
   - responseText: Can I have a potion?
     dialogueObject: {fileID: 11400000, guid: d4852d7cd34c33246ae5bf3e07a758e2, type: 2}

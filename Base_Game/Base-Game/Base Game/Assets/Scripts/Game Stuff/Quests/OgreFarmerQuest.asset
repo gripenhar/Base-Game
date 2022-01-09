@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9653eeeba81ab4941b0738911b44602c, type: 3}
+  m_Name: OgreFarmerQuest
+  m_EditorClassIdentifier: 
+  QuestNPCName: Sign Farmer
+  QuestAvailable: 0
+  StartQuest: 0
+  StartQuestDialogue: {fileID: 11400000, guid: 02395ae034fd77445b8719f49d8d0abc, type: 2}
+  AcceptQuestDialogue: {fileID: 11400000, guid: 70424b95b1d2b564db41599c4bbb092b,
+    type: 2}
+  Enemies:
+  - {fileID: 11400000, guid: 0cc676c8713e55e4bb871ffc4d5c708d, type: 2}
+  CompleteQuest: 0
+  CompleteQuestDialogue: {fileID: 11400000, guid: d96ddee48cce5de40a8f6d70f87602e9,
+    type: 2}
+  GotReward: 0
+  GotRewardDialogue: {fileID: 11400000, guid: 98551d62f50e3f44298034d82194611a, type: 2}

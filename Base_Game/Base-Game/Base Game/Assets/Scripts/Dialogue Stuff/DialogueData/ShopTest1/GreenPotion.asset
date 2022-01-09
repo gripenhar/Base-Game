@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: GreenPotion
   m_EditorClassIdentifier: 
   dialogue:
-  - We're having a sale! That'll be $5.
+  - dialogueText: I'll give you one of those for just $5.
+    portrait:
+      portraitSprite: {fileID: 0}
   responses: []

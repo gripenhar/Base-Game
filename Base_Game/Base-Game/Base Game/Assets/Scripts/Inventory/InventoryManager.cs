@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
 {
 
     [Header("Inventory Information")]
-    public PlayerInventory playerInventory;
+    public Inventory2 inventory2;
 
     [SerializeField] private GameObject blankInventorySlot;
     [SerializeField] private GameObject inventoryPanel;
@@ -30,23 +30,42 @@ public class InventoryManager : MonoBehaviour
 
     void MakeInventorySlots()
     {
-        if(playerInventory)
+        inventory2 = GameObject.Find("ItemManager").GetComponent<Inventory2>();
+        if(inventory2 != null)
         {
-            for(int i = 0; i < playerInventory.myInventory.Count; i ++)
+            //inventory2 = this.GetComponent<Inventory2>();
+            Debug.Log(inventory2.itemList.Count);
+            foreach(InventoryItem invItem in inventory2.itemList)
             {
-                if(playerInventory.myInventory[i].numberHeld > 0 || 
-                playerInventory.myInventory[i].itemName == "Bottle")
-                {
+                //if(invItem.numberHeld > 0)
+                //{
                 GameObject temp = 
                 Instantiate(blankInventorySlot, inventoryPanel.transform.position, Quaternion.identity);
                 temp.transform.SetParent(inventoryPanel.transform);
                 InventorySlot newSlot = temp.GetComponent<InventorySlot>();
                 if(newSlot)
                 {
-                newSlot.Setup(playerInventory.myInventory[i], this);
+                    newSlot.Setup(invItem, this);
                 }
-                }
+                //}
             }
+            //for(int i = 0; i < inventory2.itemList.Count; i ++)
+            //{
+            //    Debug.Log(inventory2.itemList[i]);
+            //    if(inventory2.itemList[i].numberHeld > 0 /*|| 
+            //    inventory2.itemList[i].itemName == "Bottle"*/)
+            //    {
+            //        Debug.Log(inventory2.itemList[i]);
+            //        GameObject temp = 
+            //        Instantiate(blankInventorySlot, inventoryPanel.transform.position, Quaternion.identity);
+            //        temp.transform.SetParent(inventoryPanel.transform);
+            //        InventorySlot newSlot = temp.GetComponent<InventorySlot>();
+            //        if(newSlot)
+            //        {
+            //            newSlot.Setup(inventory2.itemList[i], this);
+            //        }
+            //    }
+            //}
         }
     }
 
@@ -79,14 +98,12 @@ public class InventoryManager : MonoBehaviour
         if(currentItem)
         {
             currentItem.Use();
+            inventory2.itemList.Remove(currentItem);
             //clear all the inventory slots
             ClearInventorySlots();
             //refill all the slots with new numbers
             MakeInventorySlots();
-            if(currentItem.numberHeld == 0)
-            {
-            SetTextAndButton("",false);
-            }
+            SetTextAndButton("", false);
         }
     }
 }

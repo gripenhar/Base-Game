@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: SallyOrchard1
   m_EditorClassIdentifier: 
   dialogue:
-  - Hi, I'm Sally! Welcome to the orchard!
+  - dialogueText: Hi! I'm Sally!
+    portrait:
+      portraitSprite: {fileID: 21300000, guid: 7f867ca77f62eed4e8b3135d53e386d4, type: 3}
+  - dialogueText: Welcome to the orchard!
+    portrait:
+      portraitSprite: {fileID: 21300000, guid: 1e01d35b9344fa94684342f48c730a21, type: 3}
   responses:
   - responseText: What kind of fruit grows here?
     dialogueObject: {fileID: 11400000, guid: 662eba3bea5956d4eaf45f60dcfd8d37, type: 2}

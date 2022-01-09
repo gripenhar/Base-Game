@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Coin : PowerUp
 {
-    public Inventory playerInventory;
+    public Inventory2 playerInventory;
 
     // Start is called before the first frame update
     void Start()
     {
         powerupSignal.Raise();
+        playerInventory = GameObject.Find("ItemManager").GetComponent<Inventory2>();
     }
 
     // Update is called once per frame

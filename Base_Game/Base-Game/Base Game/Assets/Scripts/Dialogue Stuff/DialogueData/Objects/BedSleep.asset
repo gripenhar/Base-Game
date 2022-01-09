@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: BedSleep
   m_EditorClassIdentifier: 
   dialogue:
-  - It's a comfy looking bed...
-  - Take a rest and regain your health?
+  - dialogueText: It's a comfy looking bed...
+    portrait:
+      portraitSprite: {fileID: 0}
+  - dialogueText: Go to sleep and regain all your health?
+    portrait:
+      portraitSprite: {fileID: 0}
   responses:
   - responseText: Yes
     dialogueObject: {fileID: 0}

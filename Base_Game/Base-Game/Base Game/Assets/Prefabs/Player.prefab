@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &224447329433881356
 Transform:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2650238000620990481
 Transform:
   m_ObjectHideFlags: 0
@@ -614,14 +614,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5063c6d04c7e5b4989739102025ec43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
+  dialogueUI: {fileID: 0}
   currentState: 0
   speed: 4
   currentHealth: {fileID: 11400000, guid: 438e9383fb0289b4f81ed78ffc6b8668, type: 2}
+  maxHealth: {fileID: 11400000, guid: c89be0f45becafb4790905af8d96a85b, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: c491a2d1d103d574ba4685d40fe5a765, type: 2}
-  startingPosition: {fileID: 0}
-  playerInventory: {fileID: 0}
+  startingPosition: {fileID: 11400000, guid: 92ae9b4b4c43a714b972b8e1f5cb9742, type: 2}
+  playerInventory: {fileID: 11400000, guid: d67d4568b9403b848af14d292b390648, type: 2}
   receivedItemSprite: {fileID: 0}
   reduceMagic: {fileID: 0}
+  flashColor: {r: 0, g: 0, b: 0, a: 0}
+  regularColor: {r: 0, g: 0, b: 0, a: 0}
+  flashDuration: 0
+  numberOfFlashes: 0
+  triggerCollider: {fileID: 0}
+  mySprite: {fileID: 0}
   projectile: {fileID: 0}
   bow: {fileID: 0}
 --- !u!95 &8775125525421621772

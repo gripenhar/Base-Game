@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PhysicalInventoryItem : MonoBehaviour
 {
-    [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private Inventory2 inventory2;
     [SerializeField] private InventoryItem thisItem; 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player") && !other.isTrigger)
         {
             AddItemToInventory();
             Destroy(this.gameObject);
@@ -18,17 +18,19 @@ public class PhysicalInventoryItem : MonoBehaviour
 
     void AddItemToInventory()
     {
-        if(playerInventory && thisItem)
-        {
-            if(playerInventory.myInventory.Contains(thisItem))
-            {
-                thisItem.numberHeld += 1;
-            }
-            else
-            {
-                playerInventory.myInventory.Add(thisItem);
-                thisItem.numberHeld += 1;
-            }
-        }
+        inventory2 = GameObject.Find("ItemManager").GetComponent<Inventory2>();
+        inventory2.itemList.Add(thisItem);
+        //if(inventory2 && thisItem)
+        //{
+        //    if(inventory2.itemList.Contains(thisItem))
+        //    {
+        //        thisItem.numberHeld += 1;
+        //    }
+        //    else
+        //    {
+        //        inventory2.itemList.Add(thisItem);
+        //        thisItem.numberHeld = 1;
+        //    }
+        //}
     }
 }

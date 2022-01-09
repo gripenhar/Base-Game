@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: TestWhat
   m_EditorClassIdentifier: 
   dialogue:
-  - There, you should be all healed now.
+  - dialogueText: There, you should feel all better now!
+    portrait:
+      portraitSprite: {fileID: 21300000, guid: 1e01d35b9344fa94684342f48c730a21, type: 3}
   responses:
   - responseText: Thank you!
     dialogueObject: {fileID: 0}

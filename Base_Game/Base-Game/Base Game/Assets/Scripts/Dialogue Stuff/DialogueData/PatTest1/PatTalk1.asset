@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: PatTalk1
   m_EditorClassIdentifier: 
   dialogue:
-  - Hi. My name is Pat. I like flowers.
-  - Do you like flowers?
+  - dialogueText: Oh, hi. I'm Pat.
+    portrait:
+      portraitSprite: {fileID: 0}
+  - dialogueText: Do you like flowers?
+    portrait:
+      portraitSprite: {fileID: 0}
   responses:
   - responseText: Yes
     dialogueObject: {fileID: 11400000, guid: b1f433e378b52b342ac10f86509c3998, type: 2}

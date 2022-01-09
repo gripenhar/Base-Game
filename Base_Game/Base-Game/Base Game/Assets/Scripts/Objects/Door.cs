@@ -14,11 +14,15 @@ public class Door : Interactable
     [Header("Door variables")]
     public DoorType thisDoorType;
     public bool open = false;
-    public Inventory playerInventory;
+    public Inventory2 playerInventory;
     public SpriteRenderer doorSprite;
     public BoxCollider2D physicsCollider;
+    public InventoryItem Key;
 
-    
+    void Start()
+    {
+        playerInventory = GameObject.Find("ItemManager").GetComponent<Inventory2>();
+    }
 
     private void Update()
     {
@@ -27,10 +31,11 @@ public class Door : Interactable
             if(playerInRange && thisDoorType == DoorType.key)
             {
                 //Does the player have a key?
-                if(playerInventory.numberOfKeys > 0)
+                Debug.Log(playerInventory.itemList.Contains(Key));
+                if(playerInventory.itemList.Contains(Key))
                 {
                     //remove a player key
-                    playerInventory.numberOfKeys--;
+                    playerInventory.itemList.Remove(Key);
                     //If so. then call the open method
                     Open();
                 }

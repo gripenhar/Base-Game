@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
     [Header("UI Stuff to change")]
-    [SerializeField] private TextMeshProUGUI itemNumberText;
+    //[SerializeField] private TextMeshProUGUI itemNumberText;
     [SerializeField] private Image itemImage;
 
     [Header("Variables from the item")]
@@ -21,7 +21,7 @@ public class InventorySlot : MonoBehaviour
         if (thisItem)
         {
             itemImage.sprite = thisItem.itemImage;
-            itemNumberText.text = "" + thisItem.numberHeld;
+            //itemNumberText.text = "" + thisItem.numberHeld;
         }
     }
 

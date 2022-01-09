@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: SallySlap
   m_EditorClassIdentifier: 
   dialogue:
-  - (SALLY SLAPPED YOU!)
+  - dialogueText: (SALLY SLAPPED YOU!)
+    portrait:
+      portraitSprite: {fileID: 0}
   responses: []

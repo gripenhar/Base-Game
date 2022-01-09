@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09915d7d2837d546a3bb6c755309603, type: 3}
+  m_Name: QuestTestStart
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogueText: Help! I have a quest that needs solving!
+    portrait:
+      portraitSprite: {fileID: 0}
+  - dialogueText: Can you kill all the enemies around here please?
+    portrait:
+      portraitSprite: {fileID: 0}
+  responses:
+  - responseText: Accept Quest
+    dialogueObject: {fileID: 0}
+  - responseText: No Thanks
+    dialogueObject: {fileID: 0}

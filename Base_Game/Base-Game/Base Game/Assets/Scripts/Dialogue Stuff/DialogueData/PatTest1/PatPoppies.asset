@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: PatPoppies
   m_EditorClassIdentifier: 
   dialogue:
-  - Someone who isn't me also loves poppies.
+  - dialogueText: Someone who isn't me also likes poppies.
+    portrait:
+      portraitSprite: {fileID: 0}
   responses: []

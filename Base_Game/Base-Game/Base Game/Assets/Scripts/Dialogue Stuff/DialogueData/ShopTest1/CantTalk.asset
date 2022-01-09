@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: CantTalk
   m_EditorClassIdentifier: 
   dialogue:
-  - Oh!
-  - If you want to buy something, please speak to me from the other side of the counter.
+  - dialogueText: Oh, you suprised me.
+    portrait:
+      portraitSprite: {fileID: 0}
+  - dialogueText: Please talk to me from across the counter, thanks.
+    portrait:
+      portraitSprite: {fileID: 0}
   responses: []

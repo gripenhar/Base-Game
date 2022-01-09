@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: SallyFruitFav
   m_EditorClassIdentifier: 
   dialogue:
-  - Um, that's none of your business, okay?
+  - dialogueText: Actually my favorite fruit are oranges.
+    portrait:
+      portraitSprite: {fileID: 21300000, guid: ae32c8961899edd4a82856f90b956b4b, type: 3}
+  - dialogueText: But they don't grow around here...
+    portrait:
+      portraitSprite: {fileID: 21300000, guid: 54670068a037fb948b35c203e60d2618, type: 3}
   responses: []

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueActivator : MonoBehaviour, IInteractable
 {
-	[SerializeField] private DialogueObject dialogueObject;
+	[SerializeField] public DialogueObject dialogueObject;
 	[SerializeField] private GameObject dialogueBox;
 
 

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c9a0618da5b234db730048437bcf3e, type: 3}
+  m_Name: SleepyLog1
+  m_EditorClassIdentifier: 
+  enemyName: Log Chris
+  isAlive: 1
+  enemyLevel: 5
+  maxHP: 20
+  currentHP: 20
+  damage: 5
+  coinsHeld: 6
+  enemyPrefab: {fileID: 4812713346566295828, guid: 64c05f6f04144f14f93e61fc6cea1446,
+    type: 3}

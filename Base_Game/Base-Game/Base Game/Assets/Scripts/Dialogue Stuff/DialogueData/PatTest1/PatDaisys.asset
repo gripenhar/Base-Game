@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: PatDaisys
   m_EditorClassIdentifier: 
   dialogue:
-  - They're so hardy and reliable.
+  - dialogueText: They are so hardy and reliable.
+    portrait:
+      portraitSprite: {fileID: 0}
   responses: []
