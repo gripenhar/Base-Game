@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9653eeeba81ab4941b0738911b44602c, type: 3}
+  m_Name: KillAllEnemiesQuest
+  m_EditorClassIdentifier: 
+  QuestNPCName: Sign Farmer (1)
+  QuestAvailable: 1
+  StartQuest: 1
+  StartQuestDialogue: {fileID: 11400000, guid: a2265284912216f489a2cc2f97860caf, type: 2}
+  AcceptQuestDialogue: {fileID: 11400000, guid: 16088411bc4a6ec459f36c56220edecd,
+    type: 2}
+  Enemies:
+  - {fileID: 11400000, guid: 0cc676c8713e55e4bb871ffc4d5c708d, type: 2}
+  - {fileID: 11400000, guid: eb1b296a368df1f439c035727fb641d5, type: 2}
+  - {fileID: 11400000, guid: 94c25f97db23c6546a35e3d9e72e5d02, type: 2}
+  - {fileID: 11400000, guid: 43bf794f8d2e308428e622cf0ab25061, type: 2}
+  - {fileID: 11400000, guid: 553e6b78a105bbc4e99c7c67b2263f10, type: 2}
+  - {fileID: 11400000, guid: dc9ac2bb835c3e34380282d7fb2667ec, type: 2}
+  - {fileID: 11400000, guid: a8661ff18b27e9c41b1eb2ff4ebc529f, type: 2}
+  CompleteQuest: 1
+  CompleteQuestDialogue: {fileID: 11400000, guid: 3b1c0ff9c094dda42935a645e2c9ad14,
+    type: 2}
+  GotReward: 1
+  GotRewardDialogue: {fileID: 11400000, guid: 4b77730f318977f4a97d793702045b69, type: 2}

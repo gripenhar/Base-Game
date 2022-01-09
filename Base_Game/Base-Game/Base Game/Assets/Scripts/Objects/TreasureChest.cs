@@ -3,13 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum ChestType
+{
+	Item,
+	Coins
+}
+
 public class TreasureChest : Interactable
 {
 	[Header ("Contents")]
-	public Item contents;
-	public Inventory playerInventory;
+	public ChestType thisChestType;
+	public InventoryItem contents;
+	public Inventory2 playerInventory;
 	public bool isOpen;
 	public BoolValue storedOpen;
+	public int coinAmount;
+	public Sprite coinSprite;
+	private SpriteRenderer CoinSpritePlace;
 
 	[Header("Signals and Dialog")]
 	public SignalSender raiseItem;
@@ -22,7 +32,9 @@ public class TreasureChest : Interactable
 	void Start()
 	{
 		anim = GetComponent<Animator>();
-		isOpen = storedOpen.RuntimeValue;
+		playerInventory = GameObject.Find("ItemManager").GetComponent<Inventory2>();
+		//isOpen = storedOpen.RuntimeValue;
+		isOpen = false;
 		if(isOpen){
 			anim.SetBool("opened", true);
 		}
@@ -47,15 +59,23 @@ public class TreasureChest : Interactable
 
 	public void OpenChest()
 	{
+		if(thisChestType == ChestType.Item)
+		{
+			playerInventory.currentItem = contents;
+			//contents.numberHeld = 1;
+			playerInventory.itemList.Add(contents);
+			dialogText.text = contents.itemDescription;
+		}
+		
+		if(thisChestType == ChestType.Coins)
+		{
+			playerInventory.coins += coinAmount;
+			dialogText.text = coinAmount + " coins were inside!";
+			CoinSpritePlace = GameObject.Find("Received Item").GetComponent<SpriteRenderer>();
+			CoinSpritePlace.sprite = coinSprite;
+		}
 		// Dialog window on
 		dialogBox.SetActive(true);
-
-		// Dialog text = content text
-		dialogText.text = contents.itemDescription;
-
-		// Add contents to the Inventory
-		playerInventory.AddItem(contents);
-		playerInventory.currentItem = contents;
 
 		// Raise the signal to the player to animate
 		raiseItem.Raise();
@@ -73,11 +93,17 @@ public class TreasureChest : Interactable
 
 	public void CloseChest()
 	{
-			// Dialog off
-			dialogBox.SetActive(false);
-
-			// Raise the signal to the player to stop animating
-			raiseItem.Raise();
+		PlayerMovement playerM = GameObject.Find("Player").GetComponent<PlayerMovement>();
+		// Dialog off
+		dialogBox.SetActive(false);
+		playerM.animator.SetBool("receive item", false);
+		if(thisChestType == ChestType.Coins)
+		{
+			CoinSpritePlace.sprite = null;
+		}
+		// Raise the signal to the player to stop animating
+		raiseItem.Raise();
+		playerInRange = false;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)

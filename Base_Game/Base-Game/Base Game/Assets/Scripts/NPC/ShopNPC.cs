@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ShopNPC : PowerUp
 {
-    public PlayerInventory playerInventory;
-    public Inventory playerInventory1;
+    public Inventory2 playerInventory;
+    //public Inventory playerInventory1;
     public InventoryItem RedPotion;
     public InventoryItem GreenPotion;
+    private bool wasAbleToBuy;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerInventory = GameObject.Find("ItemManager").GetComponent<Inventory2>();
     }
 
     // Update is called once per frame
@@ -21,41 +22,57 @@ public class ShopNPC : PowerUp
         
     }
 
-    public void SubtractCoins(int itemCost)
+    public void AddCoins(int moneyBack)
     {
-        playerInventory1.coins -= itemCost;
-        powerupSignal.Raise();
+        playerInventory.IncreaseCoins(moneyBack);
     }
 
+    /*
+    public void SubtractCoins(int itemCost)
+    {
+        wasAbleToBuy = playerInventory1.ReduceCoins(itemCost);
+        if(wasAbleToBuy)
+        {
+            
+            powerupSignal.Raise();
+        }
+        else
+        {
+            Debug.Log("Could not afford to buy, so did not buy.");
+        }
+    }
+    */
     public void AddRedPotion()
     {
-        if(playerInventory && RedPotion)
-        {
-            if(playerInventory.myInventory.Contains(RedPotion))
-            {
-                RedPotion.numberHeld += 1;
-            }
-            else
-            {
-                playerInventory.myInventory.Add(RedPotion);
-                RedPotion.numberHeld += 1;
-            }
-        }
+        playerInventory.itemList.Add(RedPotion);
+        //if(playerInventory && RedPotion)
+        //{
+        //    if(playerInventory.itemList.Contains(RedPotion))
+        //    {
+        //        RedPotion.numberHeld += 1;
+        //    }
+        //    else
+        //    {
+        //        
+        //        RedPotion.numberHeld = 1;
+        //    }
+        //}
     }
 
     public void AddGreenPotion()
     {
-        if(playerInventory && GreenPotion)
-        {
-            if(playerInventory.myInventory.Contains(GreenPotion))
-            {
-                GreenPotion.numberHeld += 1;
-            }
-            else
-            {
-                playerInventory.myInventory.Add(GreenPotion);
-                GreenPotion.numberHeld += 1;
-            }
-        }
+        playerInventory.itemList.Add(GreenPotion);
+        //if(playerInventory && GreenPotion)
+        //{
+        //    if(playerInventory.itemList.Contains(GreenPotion))
+        //    {
+        //        GreenPotion.numberHeld += 1;
+        //    }
+        //    else
+        //    {
+        //        
+        //        GreenPotion.numberHeld = 1;
+        //    }
+        //}
     }
 }

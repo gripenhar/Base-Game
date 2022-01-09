@@ -5,14 +5,20 @@ using TMPro;
 
 public class CoinTextManager : MonoBehaviour
 {
-	public Inventory playerInventory;
+	public Inventory2 playerInventory;
 	public TextMeshProUGUI coinDisplay;
+
+	void Start()
+	{
+		playerInventory = GameObject.Find("ItemManager").GetComponent<Inventory2>();
+	}
+
 	public void UpdateCoinCount()
 	{
 		coinDisplay.text = "" + playerInventory.coins;
 	}
 
-	void Start()
+	void Update()
 	{
 		coinDisplay.text = "" + playerInventory.coins;
 	}

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: TestYes
   m_EditorClassIdentifier: 
   dialogue:
-  - Please stay safe!
+  - dialogueText: (Sally turned away)
+    portrait:
+      portraitSprite: {fileID: 0}
   responses: []

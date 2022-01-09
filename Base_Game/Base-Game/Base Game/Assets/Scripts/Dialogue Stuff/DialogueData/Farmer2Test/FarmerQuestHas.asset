@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09915d7d2837d546a3bb6c755309603, type: 3}
+  m_Name: FarmerQuestHas
+  m_EditorClassIdentifier: 
+  dialogue:
+  - dialogueText: What, you want me to move? Noway!
+    portrait:
+      portraitSprite: {fileID: 0}
+  - dialogueText: Not until every last monster is dead!
+    portrait:
+      portraitSprite: {fileID: 0}
+  responses:
+  - responseText: I'll do it.
+    dialogueObject: {fileID: 11400000, guid: 16088411bc4a6ec459f36c56220edecd, type: 2}
+  - responseText: Whatever.
+    dialogueObject: {fileID: 0}

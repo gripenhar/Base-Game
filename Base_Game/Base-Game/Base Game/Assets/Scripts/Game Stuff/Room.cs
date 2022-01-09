@@ -15,7 +15,24 @@ public class Room : MonoBehaviour
 			//Activate all enemies and pots
 			for(int i = 0; i < enemies.Length; i++)
 			{
-				ChangeActivation(enemies[i], true);
+				if(enemies[i].enemyInfo != null)
+				{
+					if(enemies[i].enemyInfo.isAlive)
+					{
+						ChangeActivation(enemies[i], true);
+						//GameManager GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+						//GM.currentEnemyIndex = i;
+						//GM.currentRoomName = this.name;
+					}
+					else
+					{
+						ChangeActivation(enemies[i], false);
+					}
+				}
+				else
+				{
+					// null enemyInfo
+				}
 			}
 			for(int i = 0; i < pots.Length; i++)
 			{

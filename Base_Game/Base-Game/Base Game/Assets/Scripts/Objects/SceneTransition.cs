@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
+    public GameManager GM;    
+
     [Header("New Scene Variables")]
     public string sceneToLoad;
     public Vector2 playerPosition;
@@ -49,7 +51,7 @@ public class SceneTransition : MonoBehaviour
     
         }
         yield return new WaitForSeconds(fadeWait);
-        ResetCameraBounds();
+        //ResetCameraBounds();
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
         while(!asyncOperation.isDone)
         {

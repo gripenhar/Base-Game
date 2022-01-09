@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: done
   m_EditorClassIdentifier: 
   dialogue:
-  - I thought you didn't need any help?
+  - dialogueText: I thought you didn't want to help us?
+    portrait:
+      portraitSprite: {fileID: 21300000, guid: 54670068a037fb948b35c203e60d2618, type: 3}
   responses:
   - responseText: Okay
     dialogueObject: {fileID: 0}

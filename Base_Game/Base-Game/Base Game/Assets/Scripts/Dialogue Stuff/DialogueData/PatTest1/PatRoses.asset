@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: PatRoses
   m_EditorClassIdentifier: 
   dialogue:
-  - I love how complex their pedal patterns are.
+  - dialogueText: I love the their petals.
+    portrait:
+      portraitSprite: {fileID: 0}
   responses: []

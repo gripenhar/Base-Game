@@ -13,10 +13,16 @@ MonoBehaviour:
   m_Name: ShopStart
   m_EditorClassIdentifier: 
   dialogue:
-  - Hey welcome!
-  - What'll it be?
+  - dialogueText: I live here but I'd be willing to sell you some stuff.
+    portrait:
+      portraitSprite: {fileID: 0}
+  - dialogueText: Want the green one or the red one?
+    portrait:
+      portraitSprite: {fileID: 0}
   responses:
   - responseText: Red Potion
     dialogueObject: {fileID: 11400000, guid: 636cb09ac7c27964dbdb8daa33ce738b, type: 2}
   - responseText: Green Potion
     dialogueObject: {fileID: 11400000, guid: e51b05e64e9d991448795ccf87bd61fe, type: 2}
+  - responseText: No thanks.
+    dialogueObject: {fileID: 0}

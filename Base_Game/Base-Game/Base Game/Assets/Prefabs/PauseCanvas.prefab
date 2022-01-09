@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c57b698e226a16446a8edc299ed8c549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: {fileID: 11400000, guid: a8ff7866b36a40548958885e9b92ab6a, type: 2}
+  inventory2: {fileID: 0}
   blankInventorySlot: {fileID: 2964358928264629315, guid: fab3dd4b042effc429c057cb28d668dd,
     type: 3}
   inventoryPanel: {fileID: 4544841164107828536}

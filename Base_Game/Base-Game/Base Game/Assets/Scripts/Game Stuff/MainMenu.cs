@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private UI_InputWindow inputWindow;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        //inputWindow = GameObject.Find("UI_InputWindow").GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -19,7 +21,8 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("OpeningCutscene");
+        //SceneManager.LoadScene("OpeningCutscene");
+
     }
 
     public void QuitToDesktop()

@@ -10,22 +10,25 @@ public class InventoryItem : ScriptableObject
 	public string itemName;
 	public string itemDescription;
 	public Sprite itemImage;
-	public int numberHeld;
+
 	public bool usable;
 	public bool unique;
+	public bool inBattle;
 	public UnityEvent thisEvent;
 
+	//public InventoryItem InventoryItem(string name, string desc, Sprite img, int numOfItems, bool consumable, bool isUnique, UnityEvent event)
+	//{
+	//	itemName = name;
+	//	itemDescription = desc;
+	//	itemImage = img;
+	//	numberHeld = numOfItems;
+	//	usable = consumable;
+	//	unique = isUnique;
+	//	thisEvent = event;
+	//}
+	
 	public void Use()
 	{
 		thisEvent.Invoke();
-	}
-
-	public void DecreaseAmount(int amountToDecrease)
-	{
-		numberHeld -= amountToDecrease;
-		if (numberHeld< 0)
-		{
-			numberHeld = 0;
-		}
 	}
 }

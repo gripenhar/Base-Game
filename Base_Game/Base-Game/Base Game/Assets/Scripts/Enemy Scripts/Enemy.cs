@@ -16,10 +16,12 @@ public class Enemy : MonoBehaviour
     public EnemyState currentState;
 
     [Header("Enemy Stats")]
+    public EnemyInfo enemyInfo;
+    public EnemyInfo enemyInfo2;
     public FloatValue maxHealth;
     public float health;
     public float moveSpeed;
-    public string enemyName;
+    //public string enemyName;
     public int baseAttack;
     public Vector2 homePos;
 
@@ -27,6 +29,7 @@ public class Enemy : MonoBehaviour
     public GameObject deathEffect;
     private float deathEffectDelay = 1f;
     public LootTable thisLoot;
+    public LootTableItem thisLoot2;
 
     [Header("Death Signals")]
     public SignalSender roomSignal;
@@ -42,6 +45,11 @@ public class Enemy : MonoBehaviour
         transform.position = homePos;
         currentState = EnemyState.idle;
         health = maxHealth.initialValue;
+        //if(!this.enemyinfo.isAlive || !this.enemyInfo2.isAlive)
+        //{
+        //DeathEffect();
+        //MakeLoot2();
+        //}
     }
 
     private void TakeDamage(float damage)
@@ -51,6 +59,7 @@ public class Enemy : MonoBehaviour
         {
             DeathEffect();
             MakeLoot();
+            //MakeLoot2();
             if(roomSignal != null)
             {
                 roomSignal.Raise();
@@ -70,7 +79,19 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
+    /*
+        private void MakeLoot2()
+    {
+        if(thisLoot2 != null)
+        {
+            InventoryItem current = thisLoot2.LootInventoryItem();
+            if(current != null)
+            {
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
+        }
+    }
+    */
     private void DeathEffect()
     {
         if(deathEffect != null){

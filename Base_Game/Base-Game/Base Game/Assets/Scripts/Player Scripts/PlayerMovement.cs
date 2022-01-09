@@ -13,6 +13,8 @@ public enum PlayerState
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameManager GM;
+
     [Header("Dialogue Stuff")]
     [SerializeField] private DialogueUI dialogueUI;
     public DialogueUI DialogueUI => dialogueUI;
@@ -22,13 +24,16 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Rigidbody2D myRigidbody;
     private Vector3 change;
-    private Animator animator;
+    public Animator animator;
 
     //TODO Break off health system into its own component
     public FloatValue currentHealth;
-    //public FloatValue maxHealth;
+    public FloatValue maxHealth;
     public SignalSender playerHealthSignal;
+
     public VectorValue startingPosition;
+    //[SerializeField] private UI_Inventory uiInventory;
+    private Inventory2 inventory2;
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite;
     //public SignalSender playerHit;
@@ -45,8 +50,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Projectile Stuff")]
     public GameObject projectile;
     public Item bow;
-
+    
     // Start is called before the first frame update
+    private void Awake(){
+
+    }
+
     void Start()
     {
         currentState = PlayerState.walk;
@@ -54,18 +63,57 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
         myRigidbody = GetComponent<Rigidbody2D>();
-        transform.position = startingPosition.initialValue;
+        currentHealth.RuntimeValue = maxHealth.RuntimeValue;
+
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        inventory2 = GameObject.Find("ItemManager").GetComponent<Inventory2>();
+
+        //inventory2 = new Inventory2();
+        //uiInventory.SetInventory(inventory2);
+
+        //Debug.Log("PlayerMovement.Start(): GM was null, but we found it!");
+
+
+        /*
+        // GH: swap out for LoadPlayer
+        if(GM.wasBattle)
+        {
+            //Debug.Log("PlayerMovement.Start(): GM.wasBattle = true, which means we were just in a battle!");
+            LoadPlayer();
+            GM.wasBattle = false;
+        }
+        else
+        {
+            transform.position = startingPosition.initialValue;
+        }
+        */
 
     }
 
     // Update is called once per frame
     void Update()
     {
-    // Is the Player in an interaction??
-        if(dialogueUI.IsOpen) return;
+
+    if(playerInventory.coins < 0)
+	{
+	playerInventory.coins = 0;
+	}
+
+        if(currentHealth.RuntimeValue > maxHealth.RuntimeValue)
+        {
+            currentHealth.RuntimeValue = maxHealth.RuntimeValue;
+        }
+        if(currentHealth.RuntimeValue < 0f)
+        {
+            currentHealth.RuntimeValue = 0f;
+        }
+
+        // Is the Player in an interaction??
+        if(dialogueUI != null && dialogueUI.IsOpen) return;
         if(currentState == PlayerState.interact)
         {
-            return;
+        animator.SetBool("moving", false);
+        return;
         }
         
         change = Vector3.zero;
@@ -143,22 +191,25 @@ public class PlayerMovement : MonoBehaviour
 
     public void RaiseItem()
     {
-        if (playerInventory.currentItem != null)
+        //if (inventory2.currentItem != null)
+        //{
+        if(currentState != PlayerState.interact)
         {
-            if(currentState != PlayerState.interact)
+            animator.SetBool("receive item", true);
+            currentState = PlayerState.interact;
+            if (inventory2.currentItem != null)
             {
-                animator.SetBool("receive item", true);
-                currentState = PlayerState.interact;
-                receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
-            }
-            else
-            {
-                animator.SetBool("receive item", false);
-                currentState = PlayerState.idle;
-                receivedItemSprite.sprite = null;
-                playerInventory.currentItem = null;
+                receivedItemSprite.sprite = inventory2.currentItem.itemImage;
             }
         }
+        else
+        {
+            animator.SetBool("receive item", false);
+            currentState = PlayerState.idle;
+            receivedItemSprite.sprite = null;
+            inventory2.currentItem = null;
+        }
+        //}
     }
 
     void UpdateAnimationAndMove()
@@ -191,6 +242,7 @@ public class PlayerMovement : MonoBehaviour
         if (currentHealth.RuntimeValue > 0)
         {
             StartCoroutine(KnockCo(knockTime));
+            //currentHealth.RuntimeValue = 0f;
         }
         else
         {
@@ -224,6 +276,23 @@ public class PlayerMovement : MonoBehaviour
             temp++;
         }
         triggerCollider.enabled = true;
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+        //Debug.Log("saved");
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
     }
 
 

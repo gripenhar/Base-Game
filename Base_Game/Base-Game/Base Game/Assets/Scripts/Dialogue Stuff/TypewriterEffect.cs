@@ -7,6 +7,8 @@ public class TypewriterEffect : MonoBehaviour
 {
 	[SerializeField] private float typewriterSpeed = 50f;
 	public bool IsRunning { get; private set; }
+	public AudioClip sound;
+	private bool soundPlayed;
 
 	private readonly List<Punctuation> punctuations = new List<Punctuation>()
 	{
@@ -38,10 +40,10 @@ public class TypewriterEffect : MonoBehaviour
 		while (charIndex < textToType.Length)
 		{
 			int lastCharIndex = charIndex;
-			
 			t += Time.deltaTime * typewriterSpeed;
 			charIndex = Mathf.FloorToInt(t);
 			charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
+			this.GetComponent<AudioSource>().PlayOneShot(sound);
 
 			for(int i = lastCharIndex; i < charIndex; i++)
 			{
